@@ -1,0 +1,779 @@
+Sebuahajjaj<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+        
+    
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"1e7946724e",applicationID:"31671751"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="document-type" content="Public">
+<meta name="document-rating" content="Safe for Kids">
+<meta name="robots" content="ALL, INDEX, FOLLOW">
+<meta name="googlebot" content="index, follow">
+<meta name="Expires" content="never">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta name="target" content="all">
+<meta name="HandheldFriendly" content="True">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="title" content=" Cara Deface POC CBT (Computer Baseed test)  | GreyHat School Of Hacker in  Jakarta ">
+<meta name="description" content=" 
+Kali ini w mau ngasih tutorial deface poc CBT
+CBT (Computer Bassed Test)Btw Kali ini gw pngen Share Tutorial Deface poc CBT yahKalo Gitu Langsung ajh yah kita ketutorialnya…
+Untuk Bahan-Bahan:
+– H... ">
+<meta name="author" content="GreyHat School Of Hacker
+">
+<meta name="keywords" content="Cara Deface POC CBT (Computer Baseed test),Cara Deface POC CBT (Computer Baseed test) for GreyHat School Of Hacker,GreyHat School Of Hacker,Pages,Information about Cara Deface POC CBT (Computer Baseed test)
+">
+<meta name="csrf-token" content="5DfuyPx2moL4PXkCX1Aq0b1nf209hYYUGjUPGSyZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content=" Cara Deface POC CBT (Computer Baseed test)  | GreyHat School Of Hacker in  Jakarta ">
+<meta name="twitter:image" content=" https://greyhatschoolofhacker.websites.co.in/files/129288/pages/33299/cara-defac_1577521567IEpRSG.jpeg ">
+<meta name="twitter:image:alt" content=" Cara Deface POC CBT (Computer Baseed test)  | GreyHat School Of Hacker in  Jakarta ">
+<meta name="twitter:description" content=" 
+Kali ini w mau ngasih tutorial deface poc CBT
+CBT (Computer Bassed Test)Btw Kali ini gw pngen Share Tutorial Deface poc CBT yahKalo Gitu Langsung ajh yah kita ketutorialnya…
+Untuk Bahan-Bahan:
+– H... ">
+<meta property="og:site_name" content="greyhatschoolofhacker
+">
+<meta property="og:type" content="website">
+<meta property="og:title" content=" Cara Deface POC CBT (Computer Baseed test)  | GreyHat School Of Hacker in  Jakarta ">
+<meta property="og:description" content=" 
+Kali ini w mau ngasih tutorial deface poc CBT
+CBT (Computer Bassed Test)Btw Kali ini gw pngen Share Tutorial Deface poc CBT yahKalo Gitu Langsung ajh yah kita ketutorialnya…
+Untuk Bahan-Bahan:
+– H... ">
+<meta property="og:image" content=" https://greyhatschoolofhacker.websites.co.in/files/129288/pages/33299/cara-defac_1577521567IEpRSG.jpeg ">
+<meta property="og:url" content="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299
+">
+<meta name="geo.position" content="-6.551775799999999;106.6291304">
+<meta name="geo.placename" content="Jakarta">
+<meta name="geo.region" content="ID">
+    <title> Cara Deface POC CBT (Computer Baseed test)  | GreyHat School Of Hacker in  Jakarta </title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://greyhatschoolofhacker.websites.co.in/files/129288/favicon/favicon.png?v=1564706502" type="image/png" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css">
+    <link href="//fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <!-- styles -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/animate.min.css" rel="stylesheet">
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/plugins/slick/slick.css" rel="stylesheet">
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/plugins/slick/slick-theme.css" rel="stylesheet">
+    <!-- theme stylesheet -->
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/style.pink.css?v=1984470724" rel="stylesheet" id="theme-stylesheet">
+    <!-- your stylesheet with modifications -->
+    
+    
+    <link href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/custom.min.css?v=2112019205" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/css/ecommerce.min.css?v=973188236"> 
+    
+    <link rel="stylesheet" href="https://greyhatschoolofhacker.websites.co.in/common/css/custom-toast.css">
+    <!-- manifest json -->
+    <link rel="manifest" href="https://greyhatschoolofhacker.websites.co.in/obaju-pink/pwa/manifest.json">
+    <link rel="canonical" href="https://greyhatschoolofhacker.websites.co.in/index.php">
+    <link rel="alternate" href="https://greyhatschoolofhacker.websites.co.in" hreflang="en-us">
+    
+    <style type="text/css">
+        a.gflag {vertical-align:middle;font-size:16px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/16.png);}
+        a.gflag img {border:0;}
+        a.gflag:hover {background-image:url(//gtranslate.net/flags/16a.png);}
+        #goog-gt-tt {display:none !important;}
+        .goog-te-banner-frame {display:none !important;}
+        .goog-te-menu-value:hover {text-decoration:none !important;}
+        body {top:0 !important;}
+        #google_translate_element1 {display:none!important;}
+        /* #google_translate_element2 {display:none!important;} */
+    </style>
+    
+    
+    <!-- Google Analytics -->
+    <script> 
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-98172888-1', 'auto'); ga('send', 'pageview');
+    </script>
+    <!-- Facebook Pixel Code -->
+    
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '208608892996577');
+        fbq('track', 'PageView');
+    </script>
+    
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+            src="//www.facebook.com/tr?id=208608892996577&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- Google Ads -->
+    
+    
+    
+</head>
+<body>
+    
+    <input type="hidden" class="__website_id" value="129288">
+    
+    <script type='application/ld+json'>
+    {
+        "@context": "http://www.schema.org",
+        "@type": "LocalBusiness",
+        "name": "GreyHat School Of Hacker",
+        "url": "https://greyhatschoolofhacker.websites.co.in",
+        "sameAs": [
+            "https://facebook.com/GreyHat-School-Of-Hacker-100198751477991/", "ogeksianipar@gmail.com">http://ogeksianipar@gmail.com", "https://instagram.com/gsohteam", "https://YouTube.com/dimas-tersakiti-145/"
+        ],
+        "priceRange":"$$$",
+        "telephone":"+6283178359034",
+        "logo": {
+            "@type": "ImageObject",
+            "caption": "GreyHat School Of Hacker",
+            "contentUrl": "https://greyhatschoolofhacker.websites.co.in/files/129288/business/logo/logo-1066132728.jpeg"
+        },
+        "image": {
+            "@type": "ImageObject",
+            "caption": "GreyHat School Of Hacker",
+            "contentUrl": "https://greyhatschoolofhacker.websites.co.in/files/129288/business/logo/logo-1066132728.jpeg",
+            "url": "https://greyhatschoolofhacker.websites.co.in"
+        },
+        "description": "Website ini di buat oleh DarkSkull yg Gans di planet bumi ini ya:v, Dan Buat Luh Semua yg Udh Mampir Ke web ini gua mau berterimakasih karena udh liat yg kaga jelas :')",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jl. Durian Raya No.6, Lumpang, Kec. Parung Panjang, Bogor, Jawa Barat",
+            "addressLocality": "Jakarta",
+            "addressRegion": "Jakarta",
+            "postalCode": "16360",
+            "addressCountry": "Indonesia"
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "GreyHat School Of Hacker"
+            }
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-6.551775799999999",
+            "longitude": "106.6291304"
+        },
+                    "openingHoursSpecification": [
+                                                            {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Monday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Tuesday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Wednesday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Thursday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Friday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Saturday",
+                            "opens": "",
+                            "closes": ""
+                        },                                                                                {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": "Sunday",
+                            "opens": "",
+                            "closes": ""
+                        }                                                ],
+                "email": "mikodos075@gmail.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+6283178359034",
+            "contactType": "sales"
+        }
+    }
+</script>    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://greyhatschoolofhacker.websites.co.in",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://greyhatschoolofhacker.websites.co.in/search/all/{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+</script>
+    <div class="navbar navbar-default navbar-fixed-top yamm no-margin" role="navigation" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            
+            <div class="navbar-buttons" style="float: left; margin-left: 8px;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fas fa-align-justify"></i>
+                </button>
+            </div>
+            <a class="navbar-brand home" href="https://greyhatschoolofhacker.websites.co.in" data-animate-hover="bounce">   
+                                    <img src="https://greyhatschoolofhacker.websites.co.in/files/129288/business/logo/logo-1066132728.jpeg?v=753958983" 
+                        alt="GreyHat School Of Hacker" 
+                        id="mob-nav-logo"
+                        class="logo-size">
+                  
+            </a>
+            <div style="position: absolute; right: 8px;">
+                <a class="show-search" href="#" style="top: 20px; position: relative; right: 20px;">
+                    <i class="fas fa-search"></i>
+                </a>
+    
+                            </div>
+        </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                <!-- Level 1 -->
+                <ul class="nav navbar-nav navbar-left">
+                                        
+                                                    <li class="">
+                                <a title="go to Home" href="https://greyhatschoolofhacker.websites.co.in">
+                                    Home
+                                </a>
+                            </li>
+                        
+                                        
+                                                    <li class="">
+                                <a title="go to Updates" href="https://greyhatschoolofhacker.websites.co.in/updates/list">
+                                    Updates
+                                </a>
+                            </li>
+                        
+                                        
+                                                    <li class="">
+                                <a title="go to Media" href="https://greyhatschoolofhacker.websites.co.in/media/list">
+                                    Media
+                                </a>
+                            </li>
+                        
+                                        
+                                                    <li class="dropdown ">
+                                <a title="go to More Pages" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    More Pages 
+                                    <b class="caret"></b>
+                                </a>
+                                <!-- Level 2 -->
+                                <ul class="dropdown-menu">
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Poc Zicepanel With CSRF Online" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-poc-zicepanel-with-csrf-online/33181" tabindex="-1">
+                                                    Tutorial Deface Poc Zicepanel With CSRF Online
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Deface Poc Admin Access Broken" href="https://greyhatschoolofhacker.websites.co.in/pages/deface-poc-admin-access-broken/33186" tabindex="-1">
+                                                    Deface Poc Admin Access Broken
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Com_Media" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-com-media/33188" tabindex="-1">
+                                                    Cara Deface Metode Com_Media
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Ojs" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-ojs/33190" tabindex="-1">
+                                                    Cara Deface Metode Ojs
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Moxiecode File Browser + live target" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-moxiecode-file-browser-live-target/33291" tabindex="-1">
+                                                    Cara Deface Metode Moxiecode File Browser + live target
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface POC Bug Interaktif" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-bug-interaktif/33292" tabindex="-1">
+                                                    Cara Deface POC Bug Interaktif
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface POC Regmem + Live Target" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-poc-regmem-live-target/33295" tabindex="-1">
+                                                    Tutorial Deface POC Regmem + Live Target
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Website Teknik Local File Inclusion" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-website-teknik-local-file-inclusion/33296" tabindex="-1">
+                                                    Tutorial Deface Website Teknik Local File Inclusion
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="active">
+                                                <a title="go to Cara Deface POC CBT (Computer Baseed test)" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299" tabindex="-1">
+                                                    Cara Deface POC CBT (Computer Baseed test)
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Metode Timthumb RCE" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-metode-timthumb-rce/33300" tabindex="-1">
+                                                    Tutorial Deface Metode Timthumb RCE
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Take Over Domain With Cpanel" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-take-over-domain-with-cpanel/33303" tabindex="-1">
+                                                    Cara Deface Metode Take Over Domain With Cpanel
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Cara Deface POC Lokomedia + Dork Fresh" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-cara-deface-poc-lokomedia-dork-fresh/33316" tabindex="-1">
+                                                    Tutorial Cara Deface POC Lokomedia + Dork Fresh
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Parked Domain" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-parked-domain/33370" tabindex="-1">
+                                                    Cara Deface Metode Parked Domain
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Metode Bypass Admin" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-metode-bypass-admin/33372" tabindex="-1">
+                                                    Tutorial Deface Metode Bypass Admin
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Poc Sql Injection Manual" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-poc-sql-injection-manual/33373" tabindex="-1">
+                                                    Tutorial Deface Poc Sql Injection Manual
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Belajar Carding Menggunakan Sqli Dumper V8.0" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-belajar-carding-menggunakan-sqli-dumper-v80/33376" tabindex="-1">
+                                                    Cara Belajar Carding Menggunakan Sqli Dumper V8.0
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Belajar Coding Untuk Pemula" href="https://greyhatschoolofhacker.websites.co.in/pages/belajar-coding-untuk-pemula/33378" tabindex="-1">
+                                                    Belajar Coding Untuk Pemula
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tutorial Deface Mudah Metode KindEditor" href="https://greyhatschoolofhacker.websites.co.in/pages/tutorial-deface-mudah-metode-kindeditor/33382" tabindex="-1">
+                                                    Tutorial Deface Mudah Metode KindEditor
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Tips Cara MengAmankan Situs Agar Tidak Mudah Terkena Hack" href="https://greyhatschoolofhacker.websites.co.in/pages/tips-cara-mengamankan-situs-agar-tidak-mudah-terkena-hack/33383" tabindex="-1">
+                                                    Tips Cara MengAmankan Situs Agar Tidak Mudah Terkena Hack
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Spaw Uploads Vulnerability" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-spaw-uploads-vulnerability/33384" tabindex="-1">
+                                                    Cara Deface Metode Spaw Uploads Vulnerability
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Metode Spaw Uploads Vulnerability" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-metode-spaw-uploads-vulnerability/33385" tabindex="-1">
+                                                    Cara Deface Metode Spaw Uploads Vulnerability
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Memahami Lebih Dalam Tentang Structured Query Language (SQL)" href="https://greyhatschoolofhacker.websites.co.in" tabindex="-1">
+                                                    Memahami Lebih Dalam Tentang Structured Query Language (SQL)
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                                                                    <li class="">
+                                                <a title="go to Cara Deface Dengan Pligg CMS CSRF Add Admin Exploit" href="https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-dengan-pligg-cms-csrf-add-admin-exploit/33480" tabindex="-1">
+                                                    Cara Deface Dengan Pligg CMS CSRF Add Admin Exploit
+                                                </a>
+                                            </li>
+                                        
+                                                                    </ul>
+                            </li>
+                        
+                                        
+                                                    <li class="">
+                                <a title="go to Contact" href="https://greyhatschoolofhacker.websites.co.in/contact">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                                        
+                </ul>
+            </div>
+        
+        
+        
+        
+        <div class="search-content" id="hide-search">
+            <span class="close close-search">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="search-text">
+                <form id="search-form">
+                    <input type="text" title="Enter Search Term" placeholder="Search products, updates etc." name="query" id="query">
+                    <div class="radio-inline mt-10">
+                        <input type="radio" name="type" class="radio-style" id="products" value="products"> 
+                        <label for="products" class="fs-18">   
+                            
+                                                            Products
+                                                    </label>
+                    </div>
+                    <div class="radio-inline mt-10">
+                        <input type="radio" name="type" class="radio-style" id="updates" value="updates">
+                        <label for="updates" class="fs-18">   
+                            
+                                                            Updates
+                                                    </label>
+                    </div>
+                    <div class="radio-inline mt-10">
+                        <input type="radio" name="type" class="radio-style" id="media" value="media">
+                        <label for="media" class="fs-18">   
+                            
+                                                            Media
+                                                    </label>
+                    </div>
+                    <div class="radio-inline mt-10">
+                        <input type="radio" name="type" class="radio-style" id="pages" value="pages">
+                        <label for="pages" class="fs-18">  
+                            Pages
+                        </label>
+                    </div>
+                    <div class="radio-inline mt-10">
+                        <input type="radio" name="type" class="radio-style" id="all" value="all" checked>
+                        <label for="all" class="fs-18">  
+                            All
+                        </label>
+                    </div>
+                    <button title="search" class="btn" type="button" id="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+        <div id="all">
+        <div id="content">
+            <div class="container">
+                
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a title="GreyHat School Of Hacker home" 
+                                href="https://greyhatschoolofhacker.websites.co.in">
+                                Home
+                            </a>
+                        </li>
+                        <li class="active overflow-wrap-break-word">
+                                                            Cara Deface POC CBT (Computer Baseed test)
+                                                    </li>
+                    </ul>
+                                            
+                        <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/", 
+        "@type": "BreadcrumbList", 
+        "itemListElement": [
+          { 
+            "@type": "ListItem", 
+            "position": "1", 
+            "item": { 
+              "@id": "https://greyhatschoolofhacker.websites.co.in", 
+              "name": "Home" 
+            } 
+          },
+          { 
+            "@type": "ListItem", 
+            "position": "2", 
+            "item": { 
+              "@id": "https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299", 
+              "name": " Cara Deface POC CBT (Computer Baseed test) " 
+            } 
+          }
+        ]
+    }
+</script>                                    </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="box" id="text-page">
+                        
+                                                    
+                            <h2 class="text-center">
+                                <span class="overflow-wrap-break-word">
+                                    Cara Deface POC CBT (Computer Baseed test)
+                                </span>
+                            </h2>
+                        
+                                                                
+                                <div class="row">                                  
+                                                                            
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+                                           <center>
+                                                <div class="w-76-3-h-40-em-aspect">
+                                                    <a href="https://greyhatschoolofhacker.websites.co.in/files/129288/pages/33299/cara-defac_1577521567IEpRSG.jpeg" data-fancybox="images">
+                                                        <img src="/files/129288/pages/33299/cara-defac_1577521567IEpRSG.jpeg" 
+                                                            class="max-height-100-perc-width-auto" 
+                                                            alt="cara-defac_1577521567IEpRSG.jpeg"
+                                                            title="cara-defac_1577521567IEpRSG.jpeg">
+                                                    </a>
+                                                </div>
+                                            </center> 
+                                        </div>
+                                     
+                                </div>
+                                <hr>
+                                
+                                <div class="row">
+                                                                                                                                                </div>
+                            
+                            <div class="overflow-wrap-break-word summernote-content-wrapper">
+                                <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'><b style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;">Kali ini w mau ngasih tutorial deface poc CBT</b></div>
+<div style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>CBT (Computer Bassed Test)<br style="margin: 0px; padding: 0px;">Btw Kali ini gw pngen Share Tutorial Deface poc CBT yah<br style="margin: 0px; padding: 0px;"><div id="kode-iklan-tengah1" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; text-align: center;"></div>Kalo Gitu Langsung ajh yah kita ketutorialnya…</div>
+<div style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'><span style="font-size: 18px;">Untuk Bahan-Bahan:</span></div>
+<ul>
+<li style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>– Hp/PC</li>
+<li style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>
+<span style="font-size: 18px;">–</span><span style="font-size: 18px;">internet lancar</span>
+</li>
+<li style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'><span style="font-size: 18px;">– Shell Backdoor</span></li>
+<li style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'><span style="font-size: 18px;">– Script Deface</span></li>
+<li style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'><span style="font-size: 18px;">– Dork</span></li>
+</ul>
+<hr>
+<div style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>inurl:/panel/pages/<span class="skimlinks-unlinked" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; box-sizing: inherit;">login.php</span><br style="margin: 0px; padding: 0px;">(kembangin lagi)<br style="margin: 0px; padding: 0px;">Dork kembangan intect yg succses:<br style="margin: 0px; padding: 0px;"><div id="kode-iklan-tengah2" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; text-align: center;"></div>inurl:/<span class="skimlinks-unlinked" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; box-sizing: inherit;">login.php</span> inurl:/cbt</div>
+<div style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>– Eksploit<br style="margin: 0px; padding: 0px;">/panel/pages/<span class="skimlinks-unlinked" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; box-sizing: inherit;">upload-file.php</span><br style="margin: 0px; padding: 0px;">– CSRF Online (banyak di google)</div>
+<h2 style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-weight: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; transition: font-size 0.2s linear; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>Live target: http://ubkpessel.online/panel/pages/upload-file.php</h2>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Simak gan :</div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-dEMTsH_ozuE/XA9nPQENjRI/AAAAAAAAAE0/iGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs/s1600/Screenshot_2018-12-11-14-28-27-28.png" target="_blank" rel="noopener nofollow"><img border="0" data-original-height="1280" data-original-width="720" height="320" src="https://2.bp.blogspot.com/-dEMTsH_ozuE/XA9nPQENjRI/AAAAAAAAAE0/iGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs/s320/Screenshot_2018-12-11-14-28-27-28.png" width="180" style="margin: 0px; padding: 0px; border-style: none; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; max-width: 100%; height: auto; outline: none; width: 336px;"></a><br>
+</div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Jika blank seperti diatas bearti situs tersebut vuln :)</div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Langsung aja ke csrf onilne</div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-Pca9wI9RjvE/XA9nyD-PcwI/AAAAAAAAAE8/N3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs/s1600/Screenshot_2018-12-11-14-30-56-49.png" target="_blank" rel="noopener nofollow"><img border="0" data-original-height="1280" data-original-width="720" height="320" src="https://1.bp.blogspot.com/-Pca9wI9RjvE/XA9nyD-PcwI/AAAAAAAAAE8/N3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs/s320/Screenshot_2018-12-11-14-30-56-49.png" width="180" style="margin: 0px; padding: 0px; border-style: none; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; max-width: 100%; height: auto; outline: none; width: 336px;"></a><br>
+</div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">Lihat seperti gambar diatas ya kalau sudah selesai klick kunci target</div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);"><br style="margin: 0px; padding: 0px;"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Kalau sudah mengklick kunci target tinggal kalian up shell kalian </div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);"><br style="margin: 0px; padding: 0px;"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Jika sudah kalian up shell kalian akan otomotis ada tulisan succes seperti di bawah:</div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">Nih<a href="https://4.bp.blogspot.com/-TfnyS_KJHHQ/XA9oq-KEprI/AAAAAAAAAFI/PnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs/s1600/Screenshot_2018-12-11-14-34-35-50.png" target="_blank" rel="noopener nofollow"><img border="0" data-original-height="1280" data-original-width="720" height="320" src="https://4.bp.blogspot.com/-TfnyS_KJHHQ/XA9oq-KEprI/AAAAAAAAAFI/PnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs/s320/Screenshot_2018-12-11-14-34-35-50.png" width="180" style="margin: 0px; padding: 0px; border-style: none; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; max-width: 100%; height: auto; outline: none; width: 336px;"></a><br>
+</div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">Jika seperti gambar diatas berarti shell klean berhasil di upload dan tinggal kalian mengakases </div>
+<div class="separator" style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119); clear: both; text-align: center;">Cara mengakases nya gmana? </div>
+<h2 style='margin: 0px 0px 1.5em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-weight: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: "Libre Baskerville", serif; vertical-align: baseline; transition: font-size 0.2s linear; background-color: rgba(252, 251, 249, 0.901961); box-sizing: inherit; color: rgb(114, 107, 96);'>http://ubkpessel.online/images/namashellkalian.php</h2>
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Roboto, Arial, sans-serif; vertical-align: baseline; color: rgb(119, 119, 119);">Kalau sudah masuk shell you know la :)</div>
+<div><i> Oke gitu aja tutorial dari gua</i></div>
+<div><b>#DarkSkullGans</b></div>
+</body></html></p></body></html>
+                            </div>
+                            
+                            <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "Cara Deface POC CBT (Computer Baseed test)",
+        "headline": "Cara Deface POC CBT (Computer Baseed test)",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://greyhatschoolofhacker.websites.co.in/files/129288/pages/33299/cara-defac_1577521567IEpRSG.jpeg"
+        },
+        "description": "   Kali ini w mau ngasih tutorial deface poc CBT CBT (Computer Bassed Test)Btw Kali ini gw pngen Share Tutorial Deface poc CBT yahKalo Gitu Langsung ajh yah kita ketutorialnya… Untuk Bahan-Bahan:  – Hp/PC  –internet lancar  – Shell Backdoor – Script Deface – Dork   inurl:/panel/pages/login.php(kembangin lagi)Dork kembangan intect yg succses:inurl:/login.php inurl:/cbt – Eksploit/panel/pages/upload-file.php– CSRF Online (banyak di google) Live target: http://ubkpessel.online/panel/pages/upload-file.php Simak gan :    Jika blank seperti diatas bearti situs tersebut vuln :) Langsung aja ke csrf onilne    Lihat seperti gambar diatas ya kalau sudah selesai klick kunci target  Kalau sudah mengklick kunci target tinggal kalian up shell kalian   Jika sudah kalian up shell kalian akan otomotis ada tulisan succes seperti di bawah: Nih  Jika seperti gambar diatas berarti shell klean berhasil di upload dan tinggal kalian mengakases  Cara mengakases nya gmana?  http://ubkpessel.online/images/namashellkalian.php Kalau sudah masuk shell you know la :)  Oke gitu aja tutorial dari gua #DarkSkullGans  ",
+        "datePublished": "yesterday",
+        "dateModified": "2019-12-28 13:56:07",
+        "author": {
+            "@type": "Organization",
+            "name": "GreyHat School Of Hacker"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GreyHat School Of Hacker",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://greyhatschoolofhacker.websites.co.in/files/129288/business/logo/logo-1066132728.jpeg"
+            }
+        }
+    }
+</script>                            
+                            
+                            <hr>
+                            <h4>share via</h4>
+                            
+                            <a title="share on facebook" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        href="https://www.facebook.com/sharer/sharer.php?u=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299">
+        <i class="fab fa-2x fa-facebook-f share-icon tooltipped" data-position="top"
+            data-tooltip="Faceboook">
+        </i>
+    </a>
+    <a title="share on twitter" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        href="https://twitter.com/home?status=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299">
+        <i class="fab fa-2x fa-twitter share-icon tooltipped" data-position="top"
+            data-tooltip="Twitter">
+        </i>
+    </a>
+    <a title="share on pinterest" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        href="https://pinterest.com/pin/create/button/?url=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299&media=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299&description=%3C%21DOCTYPE+html+PUBLIC+%22-%2F%2FW3C%2F%2FDTD+HTML+4.0+Transitional%2F%2FEN%22+%22http%3A%2F%2Fwww.w3.org%2FTR%2FREC-html40%2Floose.dtd%22%3E%0A%3Chtml%3E%3Cbody%3E%3Cp%3E%3C%21DOCTYPE+html+PUBLIC+%22-%2F%2FW3C%2F%2FDTD+HTML+4.0+Transitional%2F%2FEN%22+%22http%3A%2F%2Fwww.w3.org%2FTR%2FREC-html40%2Floose.dtd%22%3E%0A%3Chtml%3E%3Cbody%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cb+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B%22%3EKali+ini+w+mau+ngasih+tutorial+deface+poc+CBT%3C%2Fb%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3ECBT+%28Computer+Bassed+Test%29%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3EBtw+Kali+ini+gw+pngen+Share+Tutorial+Deface+poc+CBT+yah%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3Cdiv+id%3D%22kode-iklan-tengah1%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+text-align%3A+center%3B%22%3E%3C%2Fdiv%3EKalo+Gitu+Langsung+ajh+yah+kita+ketutorialnya%E2%80%A6%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3EUntuk+Bahan-Bahan%3A%3C%2Fspan%3E%3C%2Fdiv%3E%0A%3Cul%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%E2%80%93+Hp%2FPC%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%0A%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93%3C%2Fspan%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3Einternet+lancar%3C%2Fspan%3E%0A%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Shell+Backdoor%3C%2Fspan%3E%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Script+Deface%3C%2Fspan%3E%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Dork%3C%2Fspan%3E%3C%2Fli%3E%0A%3C%2Ful%3E%0A%3Chr%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3Einurl%3A%2Fpanel%2Fpages%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Elogin.php%3C%2Fspan%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%28kembangin+lagi%29%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3EDork+kembangan+intect+yg+succses%3A%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3Cdiv+id%3D%22kode-iklan-tengah2%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+text-align%3A+center%3B%22%3E%3C%2Fdiv%3Einurl%3A%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Elogin.php%3C%2Fspan%3E%C2%A0inurl%3A%2Fcbt%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%E2%80%93+Eksploit%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%2Fpanel%2Fpages%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Eupload-file.php%3C%2Fspan%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%E2%80%93+CSRF+Online%C2%A0%28banyak+di+google%29%3C%2Fdiv%3E%0A%3Ch2+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+transition%3A+font-size+0.2s+linear%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3ELive+target%3A%C2%A0http%3A%2F%2Fubkpessel.online%2Fpanel%2Fpages%2Fupload-file.php%3C%2Fh2%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3ESimak+gan+%3A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3E%0A%3Ca+href%3D%22https%3A%2F%2F2.bp.blogspot.com%2F-dEMTsH_ozuE%2FXA9nPQENjRI%2FAAAAAAAAAE0%2FiGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-28-27-28.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F2.bp.blogspot.com%2F-dEMTsH_ozuE%2FXA9nPQENjRI%2FAAAAAAAAAE0%2FiGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-28-27-28.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EJika+blank+seperti+diatas+bearti+situs+tersebut+vuln+%3A%29%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3ELangsung+aja+ke+csrf+onilne%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3E%0A%3Ca+href%3D%22https%3A%2F%2F1.bp.blogspot.com%2F-Pca9wI9RjvE%2FXA9nyD-PcwI%2FAAAAAAAAAE8%2FN3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-30-56-49.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F1.bp.blogspot.com%2F-Pca9wI9RjvE%2FXA9nyD-PcwI%2FAAAAAAAAAE8%2FN3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-30-56-49.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ELihat+seperti+gambar+diatas+ya+kalau+sudah+selesai+klick+kunci+target%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EKalau+sudah+mengklick+kunci+target+tinggal+kalian+up+shell+kalian%C2%A0%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EJika+sudah+kalian+up+shell+kalian+akan+otomotis+ada+tulisan+succes+seperti+di+bawah%3A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ENih%3Ca+href%3D%22https%3A%2F%2F4.bp.blogspot.com%2F-TfnyS_KJHHQ%2FXA9oq-KEprI%2FAAAAAAAAAFI%2FPnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-34-35-50.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F4.bp.blogspot.com%2F-TfnyS_KJHHQ%2FXA9oq-KEprI%2FAAAAAAAAAFI%2FPnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-34-35-50.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3EJika+seperti+gambar+diatas+berarti+shell+klean+berhasil+di+upload+dan+tinggal+kalian+mengakases%C2%A0%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ECara+mengakases+nya+gmana%3F%C2%A0%3C%2Fdiv%3E%0A%3Ch2+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+transition%3A+font-size+0.2s+linear%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3Ehttp%3A%2F%2Fubkpessel.online%2Fimages%2Fnamashellkalian.php%3C%2Fh2%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EKalau+sudah+masuk+shell+you+know+la+%3A%29%3C%2Fdiv%3E%0A%3Cdiv%3E%3Ci%3E%C2%A0Oke+gitu+aja+tutorial+dari+gua%3C%2Fi%3E%3C%2Fdiv%3E%0A%3Cdiv%3E%3Cb%3E%23DarkSkullGans%3C%2Fb%3E%3C%2Fdiv%3E%0A%3C%2Fbody%3E%3C%2Fhtml%3E%3C%2Fp%3E%3C%2Fbody%3E%3C%2Fhtml%3E%0A">
+        <i class="fab fa-2x fa-pinterest-p share-icon tooltipped" data-position="top"
+            data-tooltip="Pinterest">
+        </i>
+    </a>
+    <a title="share on linkedin" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299&title=Cara Deface POC CBT (Computer Baseed test)&summary=%3C%21DOCTYPE+html+PUBLIC+%22-%2F%2FW3C%2F%2FDTD+HTML+4.0+Transitional%2F%2FEN%22+%22http%3A%2F%2Fwww.w3.org%2FTR%2FREC-html40%2Floose.dtd%22%3E%0A%3Chtml%3E%3Cbody%3E%3Cp%3E%3C%21DOCTYPE+html+PUBLIC+%22-%2F%2FW3C%2F%2FDTD+HTML+4.0+Transitional%2F%2FEN%22+%22http%3A%2F%2Fwww.w3.org%2FTR%2FREC-html40%2Floose.dtd%22%3E%0A%3Chtml%3E%3Cbody%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cb+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B%22%3EKali+ini+w+mau+ngasih+tutorial+deface+poc+CBT%3C%2Fb%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3ECBT+%28Computer+Bassed+Test%29%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3EBtw+Kali+ini+gw+pngen+Share+Tutorial+Deface+poc+CBT+yah%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3Cdiv+id%3D%22kode-iklan-tengah1%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+text-align%3A+center%3B%22%3E%3C%2Fdiv%3EKalo+Gitu+Langsung+ajh+yah+kita+ketutorialnya%E2%80%A6%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3EUntuk+Bahan-Bahan%3A%3C%2Fspan%3E%3C%2Fdiv%3E%0A%3Cul%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%E2%80%93+Hp%2FPC%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%0A%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93%3C%2Fspan%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3Einternet+lancar%3C%2Fspan%3E%0A%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Shell+Backdoor%3C%2Fspan%3E%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Script+Deface%3C%2Fspan%3E%3C%2Fli%3E%0A%3Cli+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%3Cspan+style%3D%22font-size%3A+18px%3B%22%3E%E2%80%93+Dork%3C%2Fspan%3E%3C%2Fli%3E%0A%3C%2Ful%3E%0A%3Chr%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3Einurl%3A%2Fpanel%2Fpages%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Elogin.php%3C%2Fspan%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%28kembangin+lagi%29%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3EDork+kembangan+intect+yg+succses%3A%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3Cdiv+id%3D%22kode-iklan-tengah2%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+text-align%3A+center%3B%22%3E%3C%2Fdiv%3Einurl%3A%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Elogin.php%3C%2Fspan%3E%C2%A0inurl%3A%2Fcbt%3C%2Fdiv%3E%0A%3Cdiv+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3E%E2%80%93+Eksploit%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%2Fpanel%2Fpages%2F%3Cspan+class%3D%22skimlinks-unlinked%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+box-sizing%3A+inherit%3B%22%3Eupload-file.php%3C%2Fspan%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%E2%80%93+CSRF+Online%C2%A0%28banyak+di+google%29%3C%2Fdiv%3E%0A%3Ch2+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+transition%3A+font-size+0.2s+linear%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3ELive+target%3A%C2%A0http%3A%2F%2Fubkpessel.online%2Fpanel%2Fpages%2Fupload-file.php%3C%2Fh2%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3ESimak+gan+%3A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3E%0A%3Ca+href%3D%22https%3A%2F%2F2.bp.blogspot.com%2F-dEMTsH_ozuE%2FXA9nPQENjRI%2FAAAAAAAAAE0%2FiGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-28-27-28.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F2.bp.blogspot.com%2F-dEMTsH_ozuE%2FXA9nPQENjRI%2FAAAAAAAAAE0%2FiGMFUQTQ__odoguvUKpev2FgQOJg4X6SgCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-28-27-28.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EJika+blank+seperti+diatas+bearti+situs+tersebut+vuln+%3A%29%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3ELangsung+aja+ke+csrf+onilne%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3E%0A%3Ca+href%3D%22https%3A%2F%2F1.bp.blogspot.com%2F-Pca9wI9RjvE%2FXA9nyD-PcwI%2FAAAAAAAAAE8%2FN3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-30-56-49.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F1.bp.blogspot.com%2F-Pca9wI9RjvE%2FXA9nyD-PcwI%2FAAAAAAAAAE8%2FN3qlvYnbljYf3UoJLx6f3_2f3cRxhfWewCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-30-56-49.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ELihat+seperti+gambar+diatas+ya+kalau+sudah+selesai+klick+kunci+target%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EKalau+sudah+mengklick+kunci+target+tinggal+kalian+up+shell+kalian%C2%A0%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3E%3Cbr+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B%22%3E%3C%2Fdiv%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EJika+sudah+kalian+up+shell+kalian+akan+otomotis+ada+tulisan+succes+seperti+di+bawah%3A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ENih%3Ca+href%3D%22https%3A%2F%2F4.bp.blogspot.com%2F-TfnyS_KJHHQ%2FXA9oq-KEprI%2FAAAAAAAAAFI%2FPnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs%2Fs1600%2FScreenshot_2018-12-11-14-34-35-50.png%22+target%3D%22_blank%22+rel%3D%22noopener+nofollow%22%3E%3Cimg+border%3D%220%22+data-original-height%3D%221280%22+data-original-width%3D%22720%22+height%3D%22320%22+src%3D%22https%3A%2F%2F4.bp.blogspot.com%2F-TfnyS_KJHHQ%2FXA9oq-KEprI%2FAAAAAAAAAFI%2FPnxeOyXPaeou6pmEgJ7ak6iq4_QtJIlRQCLcBGAs%2Fs320%2FScreenshot_2018-12-11-14-34-35-50.png%22+width%3D%22180%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border-style%3A+none%3B+font-style%3A+inherit%3B+font-variant%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+inherit%3B+line-height%3A+inherit%3B+font-family%3A+inherit%3B+vertical-align%3A+baseline%3B+max-width%3A+100%25%3B+height%3A+auto%3B+outline%3A+none%3B+width%3A+336px%3B%22%3E%3C%2Fa%3E%3Cbr%3E%0A%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3EJika+seperti+gambar+diatas+berarti+shell+klean+berhasil+di+upload+dan+tinggal+kalian+mengakases%C2%A0%3C%2Fdiv%3E%0A%3Cdiv+class%3D%22separator%22+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B+clear%3A+both%3B+text-align%3A+center%3B%22%3ECara+mengakases+nya+gmana%3F%C2%A0%3C%2Fdiv%3E%0A%3Ch2+style%3D%27margin%3A+0px+0px+1.5em%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-weight%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+18px%3B+line-height%3A+inherit%3B+font-family%3A+%22Libre+Baskerville%22%2C+serif%3B+vertical-align%3A+baseline%3B+transition%3A+font-size+0.2s+linear%3B+background-color%3A+rgba%28252%2C+251%2C+249%2C+0.901961%29%3B+box-sizing%3A+inherit%3B+color%3A+rgb%28114%2C+107%2C+96%29%3B%27%3Ehttp%3A%2F%2Fubkpessel.online%2Fimages%2Fnamashellkalian.php%3C%2Fh2%3E%0A%3Cdiv+style%3D%22margin%3A+0px%3B+padding%3A+0px%3B+border%3A+0px%3B+font-variant-numeric%3A+inherit%3B+font-stretch%3A+inherit%3B+font-size%3A+16px%3B+line-height%3A+inherit%3B+font-family%3A+Roboto%2C+Arial%2C+sans-serif%3B+vertical-align%3A+baseline%3B+color%3A+rgb%28119%2C+119%2C+119%29%3B%22%3EKalau+sudah+masuk+shell+you+know+la+%3A%29%3C%2Fdiv%3E%0A%3Cdiv%3E%3Ci%3E%C2%A0Oke+gitu+aja+tutorial+dari+gua%3C%2Fi%3E%3C%2Fdiv%3E%0A%3Cdiv%3E%3Cb%3E%23DarkSkullGans%3C%2Fb%3E%3C%2Fdiv%3E%0A%3C%2Fbody%3E%3C%2Fhtml%3E%3C%2Fp%3E%3C%2Fbody%3E%3C%2Fhtml%3E%0A&source=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299">
+        <i class="fab fa-2x fa-linkedin-in share-icon tooltipped" data-position="top"
+            data-tooltip="Linked-in">
+        </i>
+    </a>
+    <a title="share via mail" 
+        href="mailto:?&subject=Cara Deface POC CBT (Computer Baseed test)sub&body=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299">
+        <i class="fas fa-2x fa-envelope share-icon tooltipped" data-position="top"
+            data-tooltip="e-mail">
+        </i>
+    </a>
+    <a title="share via whatsapp" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        href="https://api.whatsapp.com/send?text=https://greyhatschoolofhacker.websites.co.in/pages/cara-deface-poc-cbt-computer-baseed-test/33299">
+        <b>
+        <i class="fab fa-2x fa-whatsapp share-icon tooltipped" data-position="top"
+            data-tooltip="WhatsApp">
+        </i>
+        </b>
+    </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footer">
+    <center>
+        <div class="container">
+            <div class="row">
+                                    <div class="col-md-3 col-sm-6 tag-area">
+                        <h3>Keywords</h3>
+                                                    <a title="NOOBTERSAKITI" href="/search/tags/noobtersakiti">
+                                <i class="fas fa-tags" aria-hidden="true"></i>
+                                NOOBTERSAKITI
+                            </a>
+                                                    <a title="GSOHTEAM" href="/search/tags/gsohteam">
+                                <i class="fas fa-tags" aria-hidden="true"></i>
+                                GSOHTEAM
+                            </a>
+                                                    <a title="DARKSKULL" href="/search/tags/darkskull">
+                                <i class="fas fa-tags" aria-hidden="true"></i>
+                                DARKSKULL
+                            </a>
+                                                
+                        <script type='application/ld+json'>
+    {
+        "@context": "http://schema.org/",
+        "@type": "WebPage",
+        "keywords": ["NOOBTERSAKITI","GSOHTEAM","DARKSKULL"],
+        "position": "129211",
+        "alternateName": "GreyHat School Of Hacker",
+        "description": "Website ini di buat oleh DarkSkull yg Gans di planet bumi ini ya:v, Dan Buat Luh Semua yg Udh Mampir Ke web ini gua mau berterimakasih karena udh liat yg kaga jelas :')",
+        "name": "GreyHat School Of Hacker"
+    }
+</script>
+                    </div>
+                
+                <hr class="hidden-md hidden-lg">
+   
+                                    <div class="col-md-3">
+                        <h5 class="fs-1-3-em">
+                            Opening Hours.              
+                        </h5>
+                        <table class="mx-auto table table-condensed borderless text-center">
+                            <tbody>
+                                                                                                            <tr>
+                                            <td class="pr-2">
+                                                                                                    Monday
+                                                                                            </td>
+                                            <td>
+                                                                                                    - 
+                                                                                            </td>
+                                        </tr>
+                                                                                                                                                <tr>
+                                            <td class="pr-2">
+                                                                                                    Tuesday
+                                                                                            </td>
+                                            <td>
+                                                                                                    - 
+            ...
